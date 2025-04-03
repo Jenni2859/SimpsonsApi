@@ -4,11 +4,22 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react'
 import { Text, View } from 'react-native'
 import HomeScreen from './src/screens/HomeScreen';
+import "react-native-gesture-handler"
+import InitialScreen from './src/screens/InitialScreen';
+import DetailsScreen from './src/screens/DetailsScreen';
+import DrawerNavigation from './src/navigation/DrawerNavigation';
 
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
+
+const Navigation = () =>{
+  return(<Drawer.Navigator initialRouteName='Inicio'>
+    <Drawer.Screen name='Inicio' component={InitialScreen} />
+    <Drawer.Screen name='Personajes' component={HomeScreen} />
+  </Drawer.Navigator>)
+}
 
 const App = () => {
   return (
@@ -16,15 +27,12 @@ const App = () => {
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen
         name='Home'
-        component={()=>(
-          <Drawer.Navigator>
-            <Drawer.Screen name='Inicio' component={HomeScreen} />
-            <Drawer.Screen name='Personajes' component={HomeScreen} />
-          </Drawer.Navigator>
-        )}
+        component={Navigation}
 
         options={{headerShown: false}}
         />
+
+        <Stack.Screen name='DetailsScreen' component={DetailsScreen} />
       </Stack.Navigator>
 
     </NavigationContainer>

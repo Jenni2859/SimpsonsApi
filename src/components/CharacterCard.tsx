@@ -11,7 +11,7 @@ const CharacterCard = ({character}: Props) => {
     const navigation = useNavigation<any>();
   return (
     <View style={Styles.card}>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate('DetailsScreen', {characterId: character.character})}>
             <Image source={{ uri: character.image}} style={Styles.image} />
         </Pressable>
 
@@ -27,11 +27,13 @@ const Styles = StyleSheet.create({
         padding:10,
         backgroundColor: "#c14343",
         borderRadius:10,
+        margin: 20,
     },
     image:{
         width:"100%",
         height:200,
         borderRadius:10,
+        objectFit:"contain",
     },
     name:{
         fontSize:18,
