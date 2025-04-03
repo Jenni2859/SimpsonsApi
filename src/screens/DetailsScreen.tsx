@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { useRoute } from '@react-navigation/native'; // Para acceder a los parámetros de la navegación
+import { useRoute } from '@react-navigation/native'; 
 
 const DetailsScreen = () => {
   const route = useRoute<any>();
-  const { characterId } = route.params; // Obtener el ID del personaje
+  const { characterName } = route.params; // Obtener el nombre del personaje
 
   const [characterDetails, setCharacterDetails] = useState<any>(null);
 
@@ -12,19 +12,19 @@ const DetailsScreen = () => {
     // Realizar la solicitud de los detalles del personaje con el ID
     const fetchCharacterDetails = async () => {
       try {
-        const response = await fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?character=${characterId}`);
+        const response = await fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?character=${characterName}`);
         const data = await response.json();
-        setCharacterDetails(data[0]); // Suponiendo que la respuesta es un array
+        setCharacterDetails(data[0]); 
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchCharacterDetails();
-  }, [characterId]);
+  }, [characterName]);
 
   if (!characterDetails) {
-    return <Text>{' Cargando datos de: ' + characterId}</Text>;
+    return <Text>{' Cargando datos de: ' + characterName}</Text>;
   }
 
   return (
@@ -43,31 +43,31 @@ const styles = StyleSheet.create({
       padding: 20,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#f5cc00', // Un color más vibrante y relacionado con el tema de los Simpsons
-      borderRadius: 15, // Redondear las esquinas
+      backgroundColor: '#f5cc00', 
+      borderRadius: 15, 
       marginHorizontal: 15,
     },
     image: {
-      width: 220, // Tamaño un poco mayor para darle protagonismo
+      width: 220, 
       height: 220,
-      borderRadius: 110, // Hacer la imagen completamente redonda
-      borderWidth: 5, // Agregar un borde alrededor de la imagen
-      borderColor: '#fff', // Borde blanco para resaltar
-      marginBottom: 30, // Mayor espacio debajo de la imagen
+      borderRadius: 110, 
+      borderWidth: 5, 
+      borderColor: '#fff', 
+      marginBottom: 30, 
       resizeMode: 'contain',
     },
     name: {
-      fontSize: 28, // Tamaño de fuente más grande para el nombre
+      fontSize: 28, 
       fontWeight: 'bold',
-      color: '#3a3a3a', // Un color gris oscuro para el nombre
-      textAlign: 'center', // Centrado del texto
+      color: '#3a3a3a', 
+      textAlign: 'center', 
       marginBottom: 15,
-      fontFamily: 'Comic Sans MS', // Fuentes más divertidas y relacionadas con el estilo del show
+      fontFamily: 'Comic Sans MS', 
     },
     quote: {
       fontSize: 18,
       fontStyle: 'italic',
-      color: '#333', // Un gris más oscuro para el texto de la cita
+      color: '#333', 
       textAlign: 'center',
     },
   });

@@ -23,30 +23,30 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Fondo oscuro con transparencia
+    backgroundColor: 'rgba(0, 0, 0, 0.6)', 
     padding: 30,
     borderRadius: 15,
     alignItems: 'center',
     width: '100%',
-    maxWidth: 400, // Limitar el tamaño máximo
+    maxWidth: 400, 
   },
   title: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#FFD700', // Amarillo dorado, típico de los Simpsons
+    color: '#FFD700', 
     marginBottom: 20,
     textAlign: 'center',
-    fontFamily: 'Comic Sans MS', // Fuentes divertidas
+    fontFamily: 'Comic Sans MS', 
   },
   subtitle: {
     fontSize: 18,
     color: '#fff',
     marginBottom: 30,
     textAlign: 'center',
-    fontFamily: 'Comic Sans MS', // Fuentes divertidas
+    fontFamily: 'Comic Sans MS', 
   },
   button: {
-    backgroundColor: '#FFD700', // Botón amarillo, color característico de los Simpsons
+    backgroundColor: '#FFD700', 
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 20,
