@@ -11,7 +11,7 @@ const CharacterCard = ({character}: Props) => {
     const navigation = useNavigation<any>();
   return (
     <View style={Styles.card}>
-        <Pressable onPress={() => navigation.navigate('DetailsScreen', {characterId: character.character})}>
+        <Pressable onPress={() => navigation.navigate('DetailsScreen', {characterName: character.character})}>
             <Image source={{ uri: character.image}} style={Styles.image} />
         </Pressable>
 

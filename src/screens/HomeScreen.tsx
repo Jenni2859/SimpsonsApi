@@ -35,7 +35,7 @@ const HomeScreen = () => {
 
 
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor:"#fff"}}>
         <Text style={global.title}> Personajes de Simpsons </Text>
 
         {characters.map((char)=>(

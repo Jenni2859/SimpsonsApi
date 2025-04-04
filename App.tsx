@@ -15,7 +15,14 @@ const Drawer = createDrawerNavigator();
 
 
 const Navigation = () =>{
-  return(<Drawer.Navigator initialRouteName='Inicio'>
+  return(<Drawer.Navigator initialRouteName='Inicio'
+    screenOptions={{
+      headerStyle:{
+        backgroundColor:"#f5cc00",
+      },
+      headerTintColor:"#fff",
+    }}
+  >
     <Drawer.Screen name='Inicio' component={InitialScreen} />
     <Drawer.Screen name='Personajes' component={HomeScreen} />
   </Drawer.Navigator>)
@@ -24,7 +31,13 @@ const Navigation = () =>{
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Navigator initialRouteName='Home'
+      screenOptions={{
+        headerStyle:{
+          backgroundColor:"#f5cc00",
+        },
+        headerTintColor:"#fff",
+      }}>
         <Stack.Screen
         name='Home'
         component={Navigation}
@@ -32,7 +45,7 @@ const App = () => {
         options={{headerShown: false}}
         />
 
-        <Stack.Screen name='DetailsScreen' component={DetailsScreen} />
+        <Stack.Screen name='DetailsScreen' component={DetailsScreen}/>
       </Stack.Navigator>
 
     </NavigationContainer>

@@ -11,5 +11,6 @@ export default StyleSheet.create({
         fontWeight:"bold",
         marginVertical:10,
         textAlign:"center",
+        color:"#c14343"
     }
 })
