@@ -5,9 +5,11 @@ import { ScrollView, Text } from 'react-native-gesture-handler'
 import global from '../styles/global'
 import CharacterCard from '../components/CharacterCard'
 
-const HomeScreen = () => {
+const HomeScreen = ({route}:any) => {
 
-    const [characters, setCharacters] = useState<Character[]>([])
+    const [characters, setCharacters] = useState<Character[]>([]);
+
+    //const {user} = route.params; // Usuario que viene desde el login
 
     useEffect(() =>{
         const fetchCharacter=async() =>{
@@ -35,7 +37,8 @@ const HomeScreen = () => {
 
 
   return (
-    <ScrollView style={{backgroundColor:"#fff"}}>
+    
+    <ScrollView style={{backgroundColor:"#00aaff"}}>
         <Text style={global.title}> Personajes de Simpsons </Text>
 
         {characters.map((char)=>(

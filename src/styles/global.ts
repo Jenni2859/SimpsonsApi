@@ -11,6 +11,9 @@ export default StyleSheet.create({
         fontWeight:"bold",
         marginVertical:10,
         textAlign:"center",
-        color:"#c14343"
+        color:"#fada00",
+        textShadowColor: '#000',
+        textShadowOffset: { width: 2, height: 2 },
+        textShadowRadius: 2,
     }
 })

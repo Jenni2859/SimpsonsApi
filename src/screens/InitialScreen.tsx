@@ -37,6 +37,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: 'center',
     fontFamily: 'Comic Sans MS', 
+    textShadowColor: '#000',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 2,
   },
   subtitle: {
     fontSize: 18,
@@ -44,6 +47,9 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     textAlign: 'center',
     fontFamily: 'Comic Sans MS', 
+    textShadowColor: '#000',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 2,
   },
   button: {
     backgroundColor: '#FFD700', 

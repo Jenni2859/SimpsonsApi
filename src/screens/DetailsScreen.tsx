@@ -32,7 +32,7 @@ const DetailsScreen = () => {
       <Image source={{ uri: characterDetails.image }} style={styles.image} />
       <Text style={styles.name}>{characterDetails.character}</Text>
       <Text  style={styles.quote}>{characterDetails.quote}</Text>
-      <Text>{'Dirección del personaje: '+ characterDetails.characterDirection}</Text>
+      {/* <Text>{'Dirección del personaje: '+ characterDetails.characterDirection}</Text> */}
     </View>
   );
 };
@@ -60,10 +60,13 @@ const styles = StyleSheet.create({
     name: {
       fontSize: 28, 
       fontWeight: 'bold',
-      color: '#3a3a3a', 
+      color: '#00aaff', 
       textAlign: 'center', 
       marginBottom: 15,
       fontFamily: 'Comic Sans MS', 
+      textShadowColor: '#000',
+        textShadowOffset: { width: 2, height: 2 },
+        textShadowRadius: 2,
     },
     quote: {
       fontSize: 18,
