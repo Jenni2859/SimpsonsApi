@@ -17,6 +17,14 @@ const StackNavigation = () => {
           backgroundColor:"#fada00",
         },
         headerTintColor:"#fff",
+        headerTitleStyle: {
+          fontSize: 20, 
+          fontWeight: 'bold', 
+          color: '#fff', 
+          textShadowColor: '#000',
+          textShadowOffset: { width: 2, height: 2 },
+          textShadowRadius: 2,
+        },
       }}>
         <Stack.Screen name="Login" component={LoginScreen} options={{title:'Iniciar Sesión'}} />
         <Stack.Screen
@@ -38,22 +46,33 @@ const Navigation = () =>{
         },
         headerTintColor:"#fff",
         drawerStyle:{
-            backgroundColor:"#fada00"
+          backgroundColor:"#fada00",
+          
         },
         headerTitleStyle: {
-            fontSize: 22, // ← Cambia el tamaño aquí
-            fontWeight: 'bold', // opcional
-          },
+          fontSize: 22, // ← Cambia el tamaño aquí
+          fontWeight: 'bold', // opcional
+          textShadowColor: '#000',
+          textShadowOffset: { width: 2, height: 2 },
+          textShadowRadius: 2,
+          padding:10,
+        },  
+        drawerLabelStyle: {
+          fontSize: 20, 
+          fontWeight: 'bold', 
+          //color: '#fff', 
+          textShadowColor: '#000',
+          textShadowOffset: { width: 2, height: 2 },
+          textShadowRadius: 2,
+        },
+        drawerActiveTintColor: '#fff', // Color del texto cuando está activo
+        drawerInactiveTintColor: '#f1d5d5', // Color del texto cuando está inactivo
+        // headerLeft:{
+          
+        // }
       }}
     >
-      <Drawer.Screen name='Inicio' component={InitialScreen}
-        options={{
-            title: "Inicio", // título personalizado si quieres
-            headerTitleStyle: {
-            fontSize: 30, // ← Tamaño del título solo para esta pantalla
-            fontWeight: 'bold',
-            },
-        }}  />
+      <Drawer.Screen name='Inicio' component={InitialScreen} />
       <Drawer.Screen name='Personajes' component={HomeScreen} />
     </Drawer.Navigator>)
   }
